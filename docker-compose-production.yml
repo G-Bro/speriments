@@ -17,7 +17,7 @@ services:
         networks:
             - speriments-backend
     php:
-        image: demo:php
+        image: georgehbroadhurst/demo:php
         volumes:
             - ./demo:/var/www/html
         build:
