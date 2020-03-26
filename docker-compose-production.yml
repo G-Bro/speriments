@@ -29,8 +29,6 @@ services:
             - speriments-backend
     redis:
         image: redis:latest
-        ports:
-            - 26379:6379
         volumes:
             - ./docker/config/redis.conf:/redis.conf
         command: [ "redis-server", "/redis.conf" ]

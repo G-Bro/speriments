@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   annotations:
-    kompose.cmd: kompose --file docker-compose-production.yml convert
+    kompose.cmd: kompose convert
     kompose.version: 1.19.0 (f63a961c)
   creationTimestamp: null
   labels:
@@ -15,7 +15,7 @@ spec:
   template:
     metadata:
       annotations:
-        kompose.cmd: kompose --file docker-compose-production.yml convert
+        kompose.cmd: kompose convert
         kompose.version: 1.19.0 (f63a961c)
       creationTimestamp: null
       labels:
@@ -27,8 +27,6 @@ spec:
         - /redis.conf
         image: redis:latest
         name: redis
-        ports:
-        - containerPort: 6379
         resources: {}
         volumeMounts:
         - mountPath: /redis.conf
